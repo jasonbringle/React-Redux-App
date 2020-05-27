@@ -1,34 +1,34 @@
-import { FETCHING_CAR_START, FETCHING_CAR_SUCCESS, FETCHING_CAR_FAILURE } from '../Actions';
+import { FETCHING_JOKE_START, FETCHING_JOKE_SUCCESS, FETCHING_JOKE_FAILURE } from '../Actions';
 
 const initialState = {
-    cars: null,
+    chuck: null,
     isFetching: false,
     error: ""
 }
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case FETCHING_CAR_START:
+        case FETCHING_JOKE_START:
             return {
                 ...state,
-                cars: null,
+                chuck: null,
                 isFetching: true,
                 error: ""
 
             };
-        case FETCHING_CAR_SUCCESS:
+        case FETCHING_JOKE_SUCCESS:
             return {
                 ...state,
-                cars: action.payload,
+                chuck: action.payload,
                 isFetching: false,
                 error: ""
             };
-        case FETCHING_CAR_FAILURE:
+        case FETCHING_JOKE_FAILURE:
             return {
                 ...state,
-                cars: null,
+                chuck: null,
                 isFetching: false,
-                error: `&{}`
+                error: ``
             };
             default:
                 return state;

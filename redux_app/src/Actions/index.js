@@ -1,18 +1,18 @@
 import axios from 'axios';
-export const FETCHING_CAR_START = "FETCHING_CAR_START";
-export const FETCHING_CAR_SUCCESS = "FETCHING_CAR_SUCCESS";
-export const FETCHING_CAR_FAILURE = "FETCHING_CAR_FAILURE";
+export const FETCHING_JOKE_START = "FETCHING_JOKE_START";
+export const FETCHING_JOKE_SUCCESS = "FETCHING_JOKE_SUCCESS";
+export const FETCHING_JOKE_FAILURE = "FETCHING_JOKE_FAILURE";
 
- export const getCars = () => dispatch => {
-     dispatch({ type: FETCHING_CAR_START});
+ export const getJoke = () => dispatch => {
+     dispatch({ type: FETCHING_JOKE_START});
      axios
-     .get(`https://marketcheck-prod.apigee.net/v2/search/car/active?api_key=KufE7jT5GG3ybq89qHyNbrVPk4JGK2Xz&zip=97267&car_type=used&year=2005&rows=100&start=0&facet_sort=count&country=US`)
+     .get(`https://api.icndb.com/jokes/random/1`)
      .then(res => {
-        console.log(res);
-        dispatch({ type: FETCHING_CAR_SUCCESS, payload: res.data.listings })}
+        // console.log(res);
+        dispatch({ type: FETCHING_JOKE_SUCCESS, payload: res.data.value[0].joke })}
         )
      .catch(err => {
        console.log("error", err);
-       dispatch({ type: FETCHING_CAR_FAILURE, payload: err.request.onerror.name})
+       dispatch({ type: FETCHING_JOKE_FAILURE, payload: err.request.onerror.name})
      });
  }
