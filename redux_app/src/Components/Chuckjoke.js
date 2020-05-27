@@ -6,7 +6,7 @@ const ChuckJoke = ({getJoke, chuck, isFetching, error}) =>  {
     if(isFetching){
 
         return <div className="loading-chuck">
-                    <h1>Getting a joke from Chuck Noris</h1>
+                    <h1>Getting a joke from Chuck Norris</h1>
                 </div>
     } else {
         return (
