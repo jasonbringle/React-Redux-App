@@ -41,10 +41,12 @@
 
 .chuck-div{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 3px solid red;
-  height: 500px;
+  height: 50vh;
+  font-size: 1.5rem;
   background-image: url(./img/chuck_kick.jpeg);
   background-size: cover;
 }
@@ -55,6 +57,7 @@
   align-items: center;
   height:500px;
   color: red;
+  font-size: 3rem;
   background-image: url(./img/chuck.jpeg);
   background-size: cover;
 

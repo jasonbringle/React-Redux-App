@@ -10,14 +10,12 @@ const ChuckJoke = ({getJoke, chuck, isFetching, error}) =>  {
                 </div>
     } else {
         return (
-            <div>
             <div className="chuck-div">
                 <h1>{chuck}</h1>  
+                <div className="button-div">
+                    <button className='button' onClick={getJoke}>Get a quote from Chuck Norris!!</button> 
+                </div>
             </div>
-            <div className="button-div">
-            <button className='button' onClick={getJoke}>Get a quote from Chuck Norris!!</button> 
-            </div>
-             </div>
         )
     }      
 }
